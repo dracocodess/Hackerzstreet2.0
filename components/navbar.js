@@ -21,7 +21,7 @@ export default function Navbar() {
         }, 500)
     }
     return <><div className="h-12 w-full flex py-14 px-8 fixed text-white align-middle select-none items-center z-10">
-        
+
         <motion.span className="text-xl poppins font-bold">{t("HACKERZSTREET_TITLE")}</motion.span>
         <motion.div className="h-6 w-0.5 bg-white mx-4 hidden md:block" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}></motion.div>
         <div className="gap-5 hidden md:flex">
@@ -30,12 +30,18 @@ export default function Navbar() {
             })}
         </div>
         <button className="py-1 px-2 rounded-full ml-auto md:hidden z-10" onClick={handleMenuState}> <svg width='24' height='24' viewBox='0 0 24 24'>
-            <motion.path strokeLinecap="round" strokeWidth={4} stroke="#000000" variants={PATH1_VARIANTS} animate={menuState} />
-            <motion.path strokeLinecap="round" strokeWidth={4} stroke="#000000" variants={PATH2_VARIANTS} animate={menuState} />
-            <motion.path strokeLinecap="round" strokeWidth={4} stroke="#000000" variants={PATH3_VARIANTS} animate={menuState} />
+            <motion.path strokeLinecap="round" strokeWidth={4} stroke="#ffffff" variants={PATH1_VARIANTS} animate={menuState} />
+            <motion.path strokeLinecap="round" strokeWidth={4} stroke="#ffffff" variants={PATH2_VARIANTS} animate={menuState} />
+            <motion.path strokeLinecap="round" strokeWidth={4} stroke="#ffffff" variants={PATH3_VARIANTS} animate={menuState} />
         </svg>
         </button>
     </div>
-        <motion.div className="absolute bottom-0 w-full h-0 bg-blue-300" variants={ANIM_STATES} initial={'open'} animate={menuOpen} transition={{ duration: 0.5, type: "easeIn" }}></motion.div>
+        <motion.div className="fixed overflow-hidden bottom-0 w-full h-0 bg-blue-300" variants={ANIM_STATES} initial={'open'} animate={menuOpen} transition={{ duration: 0.5, type: "easeIn" }}>
+            <div className="flex-row gap-10 top-1/2 relative -translate-y-1/2 p-5">
+                {links.map((link, index) => {
+                    return <Link className="block mb-10 text-3xl font-bold text-white poppins underline" href={link.path} key={index}>{link.name}</Link>
+                })}
+            </div>
+        </motion.div>
     </>
 }
