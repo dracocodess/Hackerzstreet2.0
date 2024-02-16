@@ -1,10 +1,14 @@
-import Footer from '../components/footer'
-import '../styles/globals.css'
-import "../utils/i18n"
+import Footer from '../components/footer';
+import '../styles/globals.css';
+import '../utils/i18n';
 
 function MyApp({ Component, pageProps }) {
-  return <><Component {...pageProps} />
-    <Footer /></>
+  return (
+    <>
+      <Component {...pageProps} />
+      <Footer />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

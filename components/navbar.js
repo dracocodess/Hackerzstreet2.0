@@ -1,55 +1,102 @@
-import { useTranslation } from "react-i18next"
-import { motion } from "framer-motion"
-import { PATH1_VARIANTS, PATH2_VARIANTS, PATH3_VARIANTS } from "../anim/menu"
-import { useState } from "react"
+import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import { PATH1_VARIANTS, PATH2_VARIANTS, PATH3_VARIANTS } from '../anim/menu';
+import { useState } from 'react';
 import { Image } from 'next/image';
-import Link from "next/link"
-import links from "../utils/links"
+import Link from 'next/link';
+import links from '../utils/links';
 import ANIM_STATES_LINKS from './../anim/nav/links';
 import ANIM_STATES from './../anim/menu/underMenu';
-import NavLink from "./anim/nav_link";
-import RegisterButton from "./anim/register_button";
+import NavLink from './anim/nav_link';
+import RegisterButton from './anim/register_button';
 import ANIM_STATES_MC from './../anim/menu/menuChild';
 import ANIM_STATES_MCW from './../anim/menu/menuChildWrapper';
+import ANIM_STATES_LINK_U from './../anim/nav/link_underline';
 export default function Navbar() {
-    const { t } = useTranslation()
-    const [menuState, setMenuState] = useState("open")
-    const [menuOpen, setMenuOpen] = useState("open")
-    const handleMenuState = () => {
-        setMenuState("int")
-        const nextState = menuState === "open" ? "close" : "open"
-        setMenuOpen(nextState)
-        setTimeout(() => {
-            setMenuState(nextState)
-        }, 500)
-    }
-    return <><div className="h-12 w-full flex py-14 px-8 fixed text-white align-middle select-none items-center z-10">
-
-        <motion.span className="text-xl poppins font-bold">{t("HACKERZSTREET_TITLE")}</motion.span>
-        <motion.div className="h-6 w-0.5 bg-white mx-4 hidden md:block" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}></motion.div>
+  const { t } = useTranslation();
+  const [menuState, setMenuState] = useState('open');
+  const [menuOpen, setMenuOpen] = useState('open');
+  const handleMenuState = () => {
+    setMenuState('int');
+    const nextState = menuState === 'open' ? 'close' : 'open';
+    setMenuOpen(nextState);
+    setTimeout(() => {
+      setMenuState(nextState);
+    }, 500);
+  };
+  return (
+    <>
+      <div className="h-12 w-full flex py-14 px-8 fixed text-white align-middle select-none items-center z-10">
+        <motion.span className="text-xl poppins font-bold">{t('HACKERZSTREET_TITLE')}</motion.span>
+        <motion.div
+          className="h-6 w-0.5 bg-white mx-4 hidden md:block"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        ></motion.div>
         <div className="gap-5 hidden md:flex">
-            {links.map((link, index) => {
-                return <NavLink href={link.path} heading={t(link.name)} key={index} _key={index} />
-            })}
+          {links.map((link, index) => {
+            return <NavLink href={link.path} heading={t(link.name)} key={index} _key={index} />;
+          })}
         </div>
         <div className="ml-auto flex">
-            <div className="hidden md:block">
-                <RegisterButton />
-            </div>
-            <button className="py-1 px-2 rounded-full md:hidden z-10" onClick={handleMenuState}> <svg width='24' height='24' viewBox='0 0 24 24'>
-                <motion.path strokeLinecap="round" strokeWidth={4} stroke="#ffffff" variants={PATH1_VARIANTS} animate={menuState} />
-                <motion.path strokeLinecap="round" strokeWidth={4} stroke="#ffffff" variants={PATH2_VARIANTS} animate={menuState} />
-                <motion.path strokeLinecap="round" strokeWidth={4} stroke="#ffffff" variants={PATH3_VARIANTS} animate={menuState} />
+          <div className="hidden md:block">
+            <RegisterButton />
+          </div>
+          <button className="py-1 px-2 rounded-full md:hidden z-10" onClick={handleMenuState}>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <motion.path
+                strokeLinecap="round"
+                strokeWidth={4}
+                stroke="#ffffff"
+                variants={PATH1_VARIANTS}
+                animate={menuState}
+              />
+              <motion.path
+                strokeLinecap="round"
+                strokeWidth={4}
+                stroke="#ffffff"
+                variants={PATH2_VARIANTS}
+                animate={menuState}
+              />
+              <motion.path
+                strokeLinecap="round"
+                strokeWidth={4}
+                stroke="#ffffff"
+                variants={PATH3_VARIANTS}
+                animate={menuState}
+              />
             </svg>
-            </button>
+          </button>
         </div>
-    </div>
-        <motion.div className="fixed overflow-hidden bottom-0 w-full h-0 bg-blue-300" variants={ANIM_STATES} initial={'open'} animate={menuOpen} transition={{ duration: 0.3, type: "easeIn" }}>
-            <motion.div variants={ANIM_STATES_MCW} className="flex-row gap-10 top-1/2 relative -translate-y-1/2 p-5">
-                {links.map((link, index) => {
-                    return <motion.a variants={ANIM_STATES_MC} className="block mb-10 text-3xl font-bold text-white poppins underline" href={link.path} key={index}>{link.name}</motion.a>
-                })}
-            </motion.div>
+      </div>
+      <motion.div
+        className="fixed overflow-hidden bottom-0 w-full h-0 bg-[#5256a2]"
+        variants={ANIM_STATES}
+        initial={'open'}
+        animate={menuOpen}
+        transition={{ duration: 0.3, type: 'easeIn' }}
+      >
+        <motion.div variants={ANIM_STATES_MCW} className="flex-row gap-10 top-1/2 relative -translate-y-1/2 p-5 w-fit">
+          {links.map((link, index) => {
+            return (
+              <div className="mb-10" key={index}>
+                <motion.a
+                  variants={ANIM_STATES_MC}
+                  className="block text-3xl font-bold text-white poppins w-fit"
+                  href={link.path}
+                >
+                  {link.name}
+                  <motion.div
+                    variants={ANIM_STATES_LINK_U}
+                    className="block h-1 w-0 rounded-full bg-blue-400"
+                  ></motion.div>
+                </motion.a>
+              </div>
+            );
+          })}
         </motion.div>
+      </motion.div>
     </>
+  );
 }
