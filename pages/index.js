@@ -12,7 +12,7 @@ export default function Home() {
         <title>{t('HACKERZSTREET_TITLE')}</title>
       </Head>
       <Navbar />
-      <section className="w-full min-h-screen p-3">
+      <section id={"#home"} className="w-full min-h-screen p-3">
         <Hero />
       </section>
     </>
