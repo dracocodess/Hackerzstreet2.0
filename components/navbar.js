@@ -12,6 +12,8 @@ import RegisterButton from './anim/register_button';
 import ANIM_STATES_MC from './../anim/menu/menuChild';
 import ANIM_STATES_MCW from './../anim/menu/menuChildWrapper';
 import ANIM_STATES_LINK_U from './../anim/nav/link_underline';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faBars} from "@fortawesome/free-solid-svg-icons"
 
 export default function Navbar() {
     const {t} = useTranslation();
@@ -47,34 +49,36 @@ export default function Navbar() {
                         <RegisterButton/>
                     </div>
                     <button className="py-1 px-2 rounded-full md:hidden z-10" onClick={handleMenuState}>
-                        <svg width="24" height="24" viewBox="0 0 24 24">
-                            <motion.path
-                                strokeLinecap="round"
-                                strokeWidth={4}
-                                stroke="#ffffff"
-                                variants={PATH1_VARIANTS}
-                                animate={menuState}
-                            />
-                            <motion.path
-                                strokeLinecap="round"
-                                strokeWidth={4}
-                                stroke="#ffffff"
-                                variants={PATH2_VARIANTS}
-                                animate={menuState}
-                            />
-                            <motion.path
-                                strokeLinecap="round"
-                                strokeWidth={4}
-                                stroke="#ffffff"
-                                variants={PATH3_VARIANTS}
-                                animate={menuState}
-                            />
-                        </svg>
+                        <FontAwesomeIcon icon={faBars} />
+                        {/*<svg width="24" height="24" viewBox="0 0 24 24">*/}
+                        {/*    <motion.path*/}
+                        {/*        strokeLinecap="round"*/}
+                        {/*        strokeWidth={4}*/}
+                        {/*        stroke="#ffffff"*/}
+                        {/*        variants={PATH1_VARIANTS}*/}
+                        {/*        animate={menuState}*/}
+                        {/*    />*/}
+                        {/*    <motion.path*/}
+                        {/*        strokeLinecap="round"*/}
+                        {/*        strokeWidth={4}*/}
+                        {/*        stroke="#ffffff"*/}
+                        {/*        variants={PATH2_VARIANTS}*/}
+                        {/*        animate={menuState}*/}
+                        {/*    />*/}
+                        {/*    <motion.path*/}
+                        {/*        strokeLinecap="round"*/}
+                        {/*        strokeWidth={4}*/}
+                        {/*        stroke="#ffffff"*/}
+                        {/*        variants={PATH3_VARIANTS}*/}
+                        {/*        animate={menuState}*/}
+                        {/*    />*/}
+                        {/*</svg>*/}
                     </button>
                 </div>
             </div>
+
             <motion.div
-                className="fixed overflow-hidden top-0 bottom-0 w-full h-0 bg-[#5256a2] z-20"
+                className="fixed overflow-hidden top-0  bottom-0 w-full h-0 bg-[#5256a2] z-20"
                 variants={ANIM_STATES}
                 initial={'open'}
                 animate={menuOpen}

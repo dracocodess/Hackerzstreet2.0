@@ -15,6 +15,7 @@ export default function Home() {
       <section id={"#home"} className="w-full min-h-screen p-3">
         <Hero />
       </section>
+        <section id={"#schedule"} />
     </>
   );
 }
