@@ -22,6 +22,7 @@ export default function Hero() {
                 {t("/-")}
             </div>
             <span className="block text-slate-300 text-xl font-medium">{t("Prize Pool")}</span>
+            
         </div>
 
     </div>
