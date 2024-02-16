@@ -12,7 +12,7 @@ export default function Footer() {
                <div className=" mx-auto lg:px-8 lg:py-16 flex justify-around gap-8 flex-wrap px-4 md:flex-row flex-col-reverse mt-8 pt-4 md:gap-0 md:py-8">
                    <div className='flex justify-between md:flex-row flex-col'>
                        <div className="md:py-8">
-                           <Image src="/assets/ieee-logo-black.svg" alt="logo" className="w-64 md:w-72" width={1960} height={1080}/>
+                           <Image src="/assets/IEEE-logo-black.svg" alt="logo" className="w-64 md:w-72" width={1960} height={1080}/>
                        </div>
                    </div>
                    <div className='flex justify-between md:flex-row flex-col gap-8 w-[70%]'>
