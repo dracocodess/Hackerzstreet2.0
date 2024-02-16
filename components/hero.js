@@ -13,7 +13,7 @@ export default function Hero() {
         height={1080}
         className="w-full h-full md:w-1/2"
       />
-      <div className="block text-wrap break-words px-4 py-12 mt-5">
+      <div className="block text-wrap break-words px-4 py-12 mt-5 mx-auto">
         <Image src="/assets/ieee-logo-white.svg" alt="logo" className="w-64 md:w-72 mb-10" width={1960} height={1080} />
 
         <span className="text-[#d6d5e3] lg:text-[4rem] md:text-3xl text-3xl font-bold poppins">
