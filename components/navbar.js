@@ -74,7 +74,7 @@ export default function Navbar() {
                 </div>
             </div>
             <motion.div
-                className="fixed overflow-hidden bottom-0 w-full h-0 bg-[#5256a2] z-20"
+                className="fixed overflow-hidden top-0 bottom-0 w-full h-0 bg-[#5256a2] z-20"
                 variants={ANIM_STATES}
                 initial={'open'}
                 animate={menuOpen}
