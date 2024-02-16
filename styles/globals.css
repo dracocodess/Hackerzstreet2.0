@@ -31,3 +31,40 @@ a {
 .poppins {
   font-family: "Poppins", sans-serif;
 }
+
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #585BAC #FFFFFF;
+}*/
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #FFFFFF;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #FFFFFF;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #585BAC;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #3661AC;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #585BAC;
+}

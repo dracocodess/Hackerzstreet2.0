@@ -20,7 +20,7 @@ export default function Navbar() {
             setMenuState(nextState)
         }, 500)
     }
-    return <><div className="h-12 w-full flex py-10 px-8 fixed text-white align-middle select-none items-center z-10">
+    return <><div className="h-12 w-full flex py-14 px-8 fixed text-white align-middle select-none items-center z-10">
         
         <motion.span className="text-xl poppins font-bold">{t("HACKERZSTREET_TITLE")}</motion.span>
         <motion.div className="h-6 w-0.5 bg-white mx-4 hidden md:block" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}></motion.div>
