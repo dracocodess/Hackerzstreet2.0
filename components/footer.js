@@ -8,11 +8,11 @@ import Link from "next/link";
 export default function Footer() {
     return(
         <>
-            <div id="parallax" className="bottom-0 mb-0 w-full z-20 min-h-96 text-black bg-fixed">
+            <div id="parallax" className="bottom-0 mb-0 w-full z-20 min-h-96 text-white bg-fixed">
                <div className=" mx-auto lg:px-8 lg:py-16 flex justify-around gap-8 flex-wrap px-4 md:flex-row flex-col-reverse mt-8 pt-4 md:gap-0 md:py-8">
                    <div className='flex justify-between md:flex-row flex-col'>
                        <div className="md:py-8">
-                           <Image src="/assets/IEEE-logo-black.svg" alt="logo" className="w-64 md:w-72" width={1960} height={1080}/>
+                           <Image src="/assets/ieee-logo-white.svg" alt="logo" className="w-64 md:w-72" width={1960} height={1080}/>
                        </div>
                    </div>
                    <div className='flex justify-between md:flex-row flex-col gap-8 w-[70%]'>
