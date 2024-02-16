@@ -9,6 +9,8 @@ import ANIM_STATES_LINKS from './../anim/nav/links';
 import ANIM_STATES from './../anim/menu/underMenu';
 import NavLink from "./anim/nav_link";
 import RegisterButton from "./anim/register_button";
+import ANIM_STATES_MC from './../anim/menu/menuChild';
+import ANIM_STATES_MCW from './../anim/menu/menuChildWrapper';
 export default function Navbar() {
     const { t } = useTranslation()
     const [menuState, setMenuState] = useState("open")
@@ -43,11 +45,11 @@ export default function Navbar() {
         </div>
     </div>
         <motion.div className="fixed overflow-hidden bottom-0 w-full h-0 bg-blue-300" variants={ANIM_STATES} initial={'open'} animate={menuOpen} transition={{ duration: 0.3, type: "easeIn" }}>
-            <div className="flex-row gap-10 top-1/2 relative -translate-y-1/2 p-5">
+            <motion.div variants={ANIM_STATES_MCW} className="flex-row gap-10 top-1/2 relative -translate-y-1/2 p-5">
                 {links.map((link, index) => {
-                    return <Link className="block mb-10 text-3xl font-bold text-white poppins underline" href={link.path} key={index}>{link.name}</Link>
+                    return <motion.a variants={ANIM_STATES_MC} className="block mb-10 text-3xl font-bold text-white poppins underline" href={link.path} key={index}>{link.name}</motion.a>
                 })}
-            </div>
+            </motion.div>
         </motion.div>
     </>
 }
