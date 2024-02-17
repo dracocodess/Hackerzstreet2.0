@@ -109,6 +109,17 @@ export default function Navbar() {
                             </div>
                         );
                     })}
+                    <motion.a
+                        variants={ANIM_STATES_MC}
+                        className="block text-3xl font-bold text-white poppins w-fit"
+                        href='/register'
+                    >
+                        {t('Register')}
+                        <motion.div
+                            variants={ANIM_STATES_LINK_U}
+                            className="block h-1 w-0 rounded-full bg-blue-400"
+                        ></motion.div>
+                    </motion.a>
                 </motion.div>
             </motion.div>
         </>
