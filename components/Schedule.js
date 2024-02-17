@@ -1,14 +1,16 @@
 import ScheduleCard from "./ScheduleCard";
 import {motion, useScroll} from "framer-motion"
 import {useTranslation} from "react-i18next";
-import ANIM_STATES_WRAPPER from "../anim/schedule/WrapperStates";
-
+import ANIM_STATE_SECTION from "../anim/section";
 
 export default function Schedule() {
     const {scrollYProgress} = useScroll();
     const {t} = useTranslation();
     return (
-        <div
+        <motion.div
+            variants={ANIM_STATE_SECTION}
+            whileInView="whileInView"
+            initial="initial"
             className="relative h-full rounded-[33px] w-full items-center block overflow-hidden md:pb-12 md:px-12 px-4 pb-4">
 
             <h1 className="text-6xl font-bold poppins text-center mx-auto bg-gradient-to-r bg-clip-text text-transparent
@@ -19,22 +21,22 @@ export default function Schedule() {
             <div>
 
                 <ol>
-                    <time
-                        className="text-xl leading-none text-indigo-500 poppins font-semibold">
+                    <div
+                        className="text-xl leading-none text-indigo-500 poppins font-semibold text-center mx-auto">
                         {t('15 March 2023')}
-                    </time>
+                    </div>
                     <div className="h-5"/>
                     <ScheduleCard day={"Day 1"} time={"10:00 AM"} event={"Opening Ceremony"}/>
-                    <div className="border-dashed border-l border-purple-400 w-1 h-16 absolute ml-4.5"></div>
-                    <div className="w-1 h-16 bg-transparent relative rounded-full overflow-hidden ml-4">
-                        <motion.div className="w-full h-1 rounded-full bg-purple-500" initial={{
+                    <div className="border-dashed border-l border-purple-400 w-1 h-16 absolute left-1/2"></div>
+                    <div className="w-1 h-16 bg-transparent relative rounded-full overflow-hidden mx-auto">
+                        <motion.div className="w-full h-1 rounded-full bg-purple-500 ml-[0.1rem]" initial={{
                             height: "0%",
                             y: "0%"
                         }} animate={{
                             transition: {
                                 repeat: Infinity,
                                 duration: 3,
-                                type: "tween",
+                                type: "easeInOut",
                             },
                             height: ["0%", '100%'],
                             y: ["0%", "100%"]
@@ -46,6 +48,6 @@ export default function Schedule() {
 
             </div>
 
-        </div>
+        </motion.div>
     )
 }

@@ -1,24 +1,22 @@
 import {useTranslation} from 'react-i18next';
 import {motion} from 'framer-motion';
 import {PATH1_VARIANTS, PATH2_VARIANTS, PATH3_VARIANTS} from '../anim/menu';
-import {useEffect, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {Image} from 'next/image';
-import Link from 'next/link';
 import links from '../utils/links';
-import ANIM_STATES_LINKS from './../anim/nav/links';
 import ANIM_STATES from './../anim/menu/underMenu';
 import NavLink from './anim/nav_link';
 import RegisterButton from './anim/register_button';
 import ANIM_STATES_MC from './../anim/menu/menuChild';
 import ANIM_STATES_MCW from './../anim/menu/menuChildWrapper';
 import ANIM_STATES_LINK_U from './../anim/nav/link_underline';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBars} from "@fortawesome/free-solid-svg-icons"
+
 
 export default function Navbar() {
     const {t} = useTranslation();
     const [menuState, setMenuState] = useState('open');
     const [menuOpen, setMenuOpen] = useState('open');
+
     const handleMenuState = () => {
         setMenuState('int');
         const nextState = menuState === 'open' ? 'close' : 'open';
@@ -32,12 +30,30 @@ export default function Navbar() {
             setMenuOpen('open')
             setMenuState('open')
         }
+        window.onscroll = () => {
+            if (window.scrollY > 400) {
+                if (!document.querySelector('#navbar').classList.contains("bg-gray-600")) document.querySelector('#navbar').classList.add('bg-gray-600');
+            } else if (window.scrollY < 400) {
+                if (document.querySelector('#navbar').classList.contains("bg-gray-600")) document.querySelector('#navbar').classList.remove('bg-gray-600');
+            }
+        }
     }, []);
+
     return (
         <>
-            <div className="h-12 w-full flex py-14 px-8 fixed text-white align-middle select-none items-center z-30">
+            <motion.div initial={{
+                opacity: 0
+            }} animate={{
+                opacity: 1
+            }} transition={{
+                duration: 0.5,
+                delay: 1
+            }}
+
+                        className="h-12 w-full flex py-14 px-8 fixed text-white align-middle select-none items-center z-30">
                 <div
-                    className="bg-gray-600 opacity-30 backdrop-filter backdrop-blur-xl drop-shadow-lg absolute right-4 left-4 h-20 rounded-[33px]"/>
+                    id="navbar"
+                    className="opacity-30 drop-shadow-lg absolute right-4 left-4 h-20 rounded-[33px] transition-colors"/>
                 <motion.span className="text-xl poppins font-bold z-10">{t('HACKERZSTREET_TITLE')}</motion.span>
                 <motion.div
                     className="h-6 w-0.5 bg-white mx-4 hidden lg:block"
@@ -55,33 +71,33 @@ export default function Navbar() {
                         <RegisterButton/>
                     </div>
                     <button className="py-1 px-2 rounded-full lg:hidden z-10" onClick={handleMenuState}>
-                        <FontAwesomeIcon icon={faBars}/>
-                        {/*<svg width="24" height="24" viewBox="0 0 24 24">*/}
-                        {/*    <motion.path*/}
-                        {/*        strokeLinecap="round"*/}
-                        {/*        strokeWidth={4}*/}
-                        {/*        stroke="#ffffff"*/}
-                        {/*        variants={PATH1_VARIANTS}*/}
-                        {/*        animate={menuState}*/}
-                        {/*    />*/}
-                        {/*    <motion.path*/}
-                        {/*        strokeLinecap="round"*/}
-                        {/*        strokeWidth={4}*/}
-                        {/*        stroke="#ffffff"*/}
-                        {/*        variants={PATH2_VARIANTS}*/}
-                        {/*        animate={menuState}*/}
-                        {/*    />*/}
-                        {/*    <motion.path*/}
-                        {/*        strokeLinecap="round"*/}
-                        {/*        strokeWidth={4}*/}
-                        {/*        stroke="#ffffff"*/}
-                        {/*        variants={PATH3_VARIANTS}*/}
-                        {/*        animate={menuState}*/}
-                        {/*    />*/}
-                        {/*</svg>*/}
+                        {/*<FontAwesomeIcon icon={faBars}/>*/}
+                        <motion.svg width="24" height="24" viewBox="0 0 24 24">
+                            <motion.path
+                                strokeLinecap="round"
+                                strokeWidth={4}
+                                stroke="#ffffff"
+                                variants={PATH1_VARIANTS}
+                                animate={menuState}
+                            />
+                            <motion.path
+                                strokeLinecap="round"
+                                strokeWidth={4}
+                                stroke="#ffffff"
+                                variants={PATH2_VARIANTS}
+                                animate={menuState}
+                            />
+                            <motion.path
+                                strokeLinecap="round"
+                                strokeWidth={4}
+                                stroke="#ffffff"
+                                variants={PATH3_VARIANTS}
+                                animate={menuState}
+                            />
+                        </motion.svg>
                     </button>
                 </div>
-            </div>
+            </motion.div>
 
             <motion.div
                 className="fixed overflow-hidden top-0  bottom-0 w-full h-0 bg-[#5256a2] z-20"

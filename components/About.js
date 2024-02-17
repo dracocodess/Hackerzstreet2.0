@@ -1,12 +1,14 @@
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {useTranslation} from "react-i18next";
+import ANIM_STATE_SECTION from "../anim/section";
 
 export default function About() {
     const {t} = useTranslation()
     return <motion.div
-        initial={{opacity: 0, y: 100}}
-        whileInView={{opacity: 1, y: 0}}
+        variants={ANIM_STATE_SECTION}
+        whileInView="whileInView"
+        initial="initial"
         className="relative rounded-[33px] w-full items-center block overflow-hidden md:pb-12 md:px-12 px-4 pb-4 bg-gradient-31
         from-[#BC5A78] to-[#F0816C] py-10">
         <h1 className="text-6xl font-bold poppins text-center mx-auto">{t('About Us')}</h1>
