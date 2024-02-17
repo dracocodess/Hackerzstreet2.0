@@ -24,7 +24,7 @@ export default function NavLink({ heading, href, _key }) {
       initial="initial"
       whileHover="whileHover"
       animate="fadeIn"
-      className="relative z-10 block text-lg font-medium text-white"
+      className="relative z-10  lg:text-lg font-bold text-white hidden lg:block"
     >
       {heading.split('').map((l, i) => (
         <motion.span

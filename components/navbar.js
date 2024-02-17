@@ -34,12 +34,12 @@ export default function Navbar() {
                     className="bg-gray-600 opacity-30 backdrop-filter backdrop-blur-xl drop-shadow-lg absolute right-4 left-4 h-20 rounded-[33px]"/>
                 <motion.span className="text-xl poppins font-bold z-10">{t('HACKERZSTREET_TITLE')}</motion.span>
                 <motion.div
-                    className="h-6 w-0.5 bg-white mx-4 hidden md:block"
+                    className="h-6 w-0.5 bg-white mx-4 hidden lg:block"
                     initial={{opacity: 0}}
                     animate={{opacity: 1}}
                     transition={{duration: 0.5}}
                 ></motion.div>
-                <div className="gap-5 hidden md:flex">
+                <div className="gap-5 hidden lg:flex">
                     {links.map((link, index) => {
                         return <NavLink href={link.path} heading={t(link.name)} key={index} _key={index}/>;
                     })}
@@ -48,7 +48,7 @@ export default function Navbar() {
                     <div className="hidden md:block">
                         <RegisterButton/>
                     </div>
-                    <button className="py-1 px-2 rounded-full md:hidden z-10" onClick={handleMenuState}>
+                    <button className="py-1 px-2 rounded-full lg:hidden z-10" onClick={handleMenuState}>
                         <FontAwesomeIcon icon={faBars} />
                         {/*<svg width="24" height="24" viewBox="0 0 24 24">*/}
                         {/*    <motion.path*/}
