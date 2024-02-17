@@ -5,6 +5,7 @@ import Hero from '../components/hero';
 import Head from 'next/head';
 import Schedule from "../components/Schedule";
 import About from "../components/About";
+import {useEffect} from "react";
 
 export default function Home() {
     const {t} = useTranslation();

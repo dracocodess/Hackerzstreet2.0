@@ -1,7 +1,7 @@
 import {useTranslation} from 'react-i18next';
 import {motion} from 'framer-motion';
 import {PATH1_VARIANTS, PATH2_VARIANTS, PATH3_VARIANTS} from '../anim/menu';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {Image} from 'next/image';
 import Link from 'next/link';
 import links from '../utils/links';
@@ -27,6 +27,12 @@ export default function Navbar() {
             setMenuState(nextState);
         }, 500);
     };
+    useEffect(() => {
+        window.onhashchange = () => {
+            setMenuOpen('open')
+            setMenuState('open')
+        }
+    }, []);
     return (
         <>
             <div className="h-12 w-full flex py-14 px-8 fixed text-white align-middle select-none items-center z-30">
@@ -49,7 +55,7 @@ export default function Navbar() {
                         <RegisterButton/>
                     </div>
                     <button className="py-1 px-2 rounded-full lg:hidden z-10" onClick={handleMenuState}>
-                        <FontAwesomeIcon icon={faBars} />
+                        <FontAwesomeIcon icon={faBars}/>
                         {/*<svg width="24" height="24" viewBox="0 0 24 24">*/}
                         {/*    <motion.path*/}
                         {/*        strokeLinecap="round"*/}
