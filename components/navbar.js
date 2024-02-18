@@ -79,6 +79,7 @@ export default function Navbar() {
                                 stroke="#ffffff"
                                 variants={PATH1_VARIANTS}
                                 animate={menuState}
+                                initial="open"
                             />
                             <motion.path
                                 strokeLinecap="round"
@@ -86,6 +87,7 @@ export default function Navbar() {
                                 stroke="#ffffff"
                                 variants={PATH2_VARIANTS}
                                 animate={menuState}
+                                initial="open"
                             />
                             <motion.path
                                 strokeLinecap="round"
@@ -93,6 +95,7 @@ export default function Navbar() {
                                 stroke="#ffffff"
                                 variants={PATH3_VARIANTS}
                                 animate={menuState}
+                                initial="open"
                             />
                         </motion.svg>
                     </button>
