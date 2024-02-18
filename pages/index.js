@@ -6,6 +6,7 @@ import Schedule from "../components/Schedule";
 import About from "../components/About";
 import {useEffect} from "react";
 import {animate} from "framer-motion";
+import Sponsors from "../components/Sponsors";
 
 export default function Home() {
     useEffect(() => {
@@ -30,6 +31,9 @@ export default function Home() {
             <Navbar/>
             <section id={"home"} className="w-full p-3">
                 <Hero/>
+            </section>
+            <section id={"sponsors"} className="w-full p-3">
+                <Sponsors/>
             </section>
             <section id={"schedule"} className="w-full p-3">
                 <Schedule/>

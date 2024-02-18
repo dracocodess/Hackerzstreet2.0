@@ -4,7 +4,6 @@ import {useTranslation} from "react-i18next";
 import ANIM_STATE_SECTION from "../anim/section";
 
 export default function Schedule() {
-    const {scrollYProgress} = useScroll();
     const {t} = useTranslation();
     return (
         <motion.div

@@ -19,7 +19,7 @@ export default function Hero() {
         <motion.div
             whileInView={{opacity: 1}}
             initial={{opacity: 0}}
-            className="h-full rounded-[33px]  w-full bg-gradient-31 from-header-left to-header-right flex items-center flex-col overflow-hidden md:flex-row">
+            className="h-full rounded-[33px] w-full bg-gradient-31 from-header-left to-header-right flex items-center flex-col overflow-hidden md:flex-row">
             <Image
                 src="/assets/Asset 7hackerstreet mobiile element new.svg"
                 alt="Hackerstreet"
@@ -27,7 +27,7 @@ export default function Hero() {
                 height={1080}
                 className="w-full h-full md:w-1/2"
             />
-            <div className="block text-wrap break-words md:px-8 px-2 py-12 mt-5">
+            <div className="block text-wrap break-words md:px-8 px-2 py-12 mt-5 max-w-72 min-w-72 md:max-w-[50rem]">
                 <Image src="/assets/ieee-logo-white.svg" alt="logo" className="w-64 md:w-72 mb-10" width={1960}
                        height={1080}/>
                 <span id="typewriter"
