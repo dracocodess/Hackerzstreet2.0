@@ -1,6 +1,5 @@
 import {useTranslation} from 'react-i18next';
 import Navbar from '../components/navbar';
-import Image from 'next/image';
 import Hero from '../components/hero';
 import Head from 'next/head';
 import Schedule from "../components/Schedule";
@@ -18,7 +17,7 @@ export default function Home() {
                 animate(element, {
                     width: ["0%", "100%", "100%"],
                     x: ["0%", "0%", "110%"],
-                }, {type: "tween", duration: 1, delay: 0.3, ease: "easeInOut"})
+                }, {type: "tween", duration: 1, delay: 0.5, ease: "easeInOut"})
             }
         })
     }, []);

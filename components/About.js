@@ -10,11 +10,12 @@ export default function About() {
         whileInView="whileInView"
         initial="initial"
         className="relative rounded-[33px] w-full items-center block overflow-hidden md:pb-12 md:px-12 px-4 pb-4 bg-gradient-31
-        from-[#BC5A78] to-[#F0816C] py-10 z-[-10]">
-        <div className="overflow-hidden w-fit mx-auto relative rounded-md m-5">
+        from-[#BC5A78] to-[#F0816C] py-10 -z-10">
+        <div className="overflow-hidden w-fit mx-auto relative rounded-md m-5 px-2">
             <div id="header-section-about"
-                 className="w-0 bg-orange-300 rounded-md h-full absolute -z-10"></div>
-            <h1 className="text-6xl font-bold poppins text-center mx-auto z-20">{t('About Us')}</h1>
+                 className="w-0 -left-2 bg-amber-300/50 rounded-md h-full absolute -z-10"></div>
+            <h1 className="text-6xl font-bold poppins text-center mx-auto z-20 animate-text bg-gradient-to-r
+            from-yellow-200 to-yellow-400 via-yellow-200 bg-clip-text text-transparent">{t('About Us')}</h1>
         </div>
         <div className="flex items-center w-full h-full md:gap-10 flex-col md:flex-row">
             <Image src='https://ieeecsmuj.vercel.app/_next/static/media/IEEE-logo-about.21c3a92d.svg'
