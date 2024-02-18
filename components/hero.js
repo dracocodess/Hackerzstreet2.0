@@ -31,9 +31,8 @@ export default function Hero() {
                 <Image src="/assets/ieee-logo-white.svg" alt="logo" className="w-64 md:w-72 mb-10" width={1960}
                        height={1080}/>
                 <span id="typewriter"
-                      className="text-[#d6d5e3] lg:text-[4rem] md:text-3xl text-3xl font-bold poppins"></span>
+                      className="text-[#d6d5e3] lg:text-[4rem] md:text-3xl text-2xl font-bold poppins"></span>
                 <div className="h-5"/>
-                {/*<span className="block text-[#d6d5e3] text-2xl font-medium">{t('a_hackathon')}</span>*/}
                 <RegisterButton/>
                 <div className="h-20"></div>
                 <div className="flex gap-2 text-brand-green text-3xl font-bold poppins">
