@@ -8,7 +8,7 @@ import Link from 'next/link';
 export default function Footer() {
     return (
         <>
-            <div id="parallax" className="bottom-0 mb-0 w-full z-20 min-h-96 text-white bg-fixed">
+            <section id="contact" className="bottom-0 mb-0 w-full z-20 min-h-96 text-white bg-fixed">
                 <div className="flex justify-between md:flex-row flex-col p-4 md:py-0">
 
                     <div className="md:py-8 md:hidden">
@@ -20,7 +20,8 @@ export default function Footer() {
                 <div
                     className=" mx-auto lg:px-8 lg:py-16 flex justify-around gap-8 flex-wrap px-4 md:flex-row flex-col-reverse mt-8 pt-4 md:gap-0 md:py-8">
 
-                    <Image src="/assets/ieee-logo-white.svg" alt="logo" className="w-64 md:w-72 hidden md:block" width={1960}
+                    <Image src="/assets/ieee-logo-white.svg" alt="logo" className="w-64 md:w-72 hidden md:block"
+                           width={1960}
                            height={1080}/>
                     <div className="flex justify-between md:flex-row flex-col gap-8 w-[70%]">
                         <div className="">
@@ -111,7 +112,12 @@ export default function Footer() {
                             </ul>
                         </div>
                         <div className="">
-                            <p className="text-xl font-semibold pb-2">Contact Us</p>
+                            <div className="overflow-hidden w-fit mb-2 relative rounded-md">
+                                <div id="header-section-contact"
+                                     className="w-0 bg-purple-300 rounded-md h-full absolute -z-10"></div>
+                                <p className="text-xl font-semibold">Contact Us</p>
+                            </div>
+
                             <div className="text-base flex flex-col gap-3">
                                 <ul>
                                     <li>
@@ -159,7 +165,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 }

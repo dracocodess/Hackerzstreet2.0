@@ -26,7 +26,7 @@ export default function Navbar() {
         }, 500);
     };
     useEffect(() => {
-        window.onhashchange = () => {
+        let onhashchange = () => {
             setMenuOpen('open')
             setMenuState('open')
         }
@@ -37,6 +37,7 @@ export default function Navbar() {
                 if (document.querySelector('#navbar').classList.contains("bg-gray-600")) document.querySelector('#navbar').classList.remove('bg-gray-600');
             }
         }
+        window.addEventListener('hashchange', onhashchange)
     }, []);
 
     return (

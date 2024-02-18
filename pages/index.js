@@ -6,8 +6,22 @@ import Head from 'next/head';
 import Schedule from "../components/Schedule";
 import About from "../components/About";
 import {useEffect} from "react";
+import {animate} from "framer-motion";
 
 export default function Home() {
+    useEffect(() => {
+        window.addEventListener("hashchange", () => {
+            const id = window.location.hash.replace("#", "");
+            if (id) {
+                const element = document.querySelector(`#header-section-${id}`);
+                if (!element) return;
+                animate(element, {
+                    width: ["0%", "100%", "100%"],
+                    x: ["0%", "0%", "110%"],
+                }, {type: "tween", duration: 1, delay: 0.3, ease: "easeInOut"})
+            }
+        })
+    }, []);
     const {t} = useTranslation();
     return (
         <>

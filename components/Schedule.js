@@ -12,11 +12,12 @@ export default function Schedule() {
             whileInView="whileInView"
             initial="initial"
             className="relative h-full rounded-[33px] w-full items-center block overflow-hidden md:pb-12 md:px-12 px-4 pb-4">
-
-            <h1 className="text-6xl font-bold poppins text-center mx-auto bg-gradient-to-r bg-clip-text text-transparent
+            <div className="overflow-hidden w-fit mx-auto relative rounded-md m-10">
+                <div id="header-section-schedule" className="w-0 bg-purple-300 rounded-md h-full absolute top-0 left-0 z-[-10]"></div>
+                <h1 className="text-6xl font-bold poppins text-center mx-auto bg-gradient-to-r bg-clip-text text-transparent
             from-indigo-500 via-purple-500 to-indigo-500
-            animate-text m-10">{t('Schedule_2')}</h1>
-
+            animate-text z-10">{t('Schedule_2')}</h1>
+            </div>
 
             <div>
 

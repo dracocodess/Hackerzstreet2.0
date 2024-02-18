@@ -8,6 +8,7 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem
 }
 
 a {
