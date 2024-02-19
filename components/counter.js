@@ -31,5 +31,5 @@ export default function Counter({ value, direction = 'up' }) {
     [springValue],
   );
 
-  return <span ref={ref} />;
+  return <span ref={ref}>{value}</span>;
 }

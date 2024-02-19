@@ -4,12 +4,11 @@ import {motion, useAnimation, useInView} from "framer-motion";
 import Image from "next/image";
 import {useEffect, useRef, useState} from "react";
 
-const sponsors = ["/assets/ieee-logo-white.svg", "/assets/ieee-logo-white.svg", "/assets/ieee-logo-white.svg", "/assets/ieee-logo-white.svg", "/assets/ieee-logo-white.svg", "/assets/ieee-logo-white.svg", "/assets/ieee-logo-white.svg", "/assets/ieee-logo-white.svg", "/assets/ieee-logo-white.svg", "/assets/ieee-logo-white.svg", "/assets/ieee-logo-white.svg",]
+const sponsors = ["/assets/ieee-logo-white.svg", "/assets/ieee-logo-white.svg", "/assets/ieee-logo-white.svg", "/assets/ieee-logo-white.svg"]
 export default function Sponsors() {
     const {t} = useTranslation();
     const [computedSponsorImageSize, setComputedSponsorImageSize] = useState(500)
     useEffect(() => {
-        setComputedSponsorImageSize(document.getElementById("sponsor-image").offsetWidth)
     }, []);
     return (<motion.div
         variants={ANIM_STATE_SECTION}
@@ -27,25 +26,42 @@ export default function Sponsors() {
         <div className="h-5"/>
         <h2 className="text-center mx-auto font=bold text-xl poppins text-blue-300">{t('Our Proud Sponsors')}</h2>
         <div className="h-10"/>
-        <div className="w-full overflow-hidden relative">
-            <motion.div
-                animate={{
-                    x: [0, -(sponsors.length * computedSponsorImageSize) + 40],
-                    transition: {
-                        duration: 20,
-                        repeat: Infinity,
-                        type: "tween",
-                        ease: "linear",
-                        repeatType: "reverse"
-                    }
-                }}
-
-                className = "flex gap-10" id="sponsor-image">
+        <div
+            className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+                <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                    {sponsors.map((sponsor, index) => (
+                        <li key={index}>
+                            <Image src={sponsor} alt="Sponsor" width={500} height={200} key={index}
+                                   className="w-[250px] h-[100px] md:w-[500px] md:h-[200px]"/>
+                        </li>
+                    ))}
+                </ul>
+                <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+                    aria-hidden="true">
+                    {sponsors.map((sponsor, index) => (
+                        <li key={index}>
+                            <Image src={sponsor} alt="Sponsor" width={500} height={200} key={index}
+                                   className="w-[250px] h-[100px] md:w-[500px] md:h-[200px]"/>
+                        </li>
+                    ))}
+                </ul>
+            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
                 {sponsors.map((sponsor, index) => (
-                    <Image src={sponsor} alt="Sponsor" width={500} height={200} key={index}
-                           className="w-[500px] h-[200px] flex-shrink-0"/>
+                    <li key={index}>
+                        <Image src={sponsor} alt="Sponsor" width={500} height={200} key={index}
+                               className="w-[250px] h-[100px] md:w-[500px] md:h-[200px]"/>
+                    </li>
                 ))}
-            </motion.div>
+            </ul>
+            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+                aria-hidden="true">
+                {sponsors.map((sponsor, index) => (
+                    <li key={index}>
+                        <Image src={sponsor} alt="Sponsor" width={500} height={200} key={index}
+                               className="w-[250px] h-[100px] md:w-[500px] md:h-[200px]"/>
+                    </li>
+                ))}
+            </ul>
         </div>
     </motion.div>)
 }

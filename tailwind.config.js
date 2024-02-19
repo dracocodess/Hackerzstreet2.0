@@ -5,7 +5,8 @@ module.exports = {
         extend: {
             'animation': {
                 'text': 'text 5s ease infinite',
-                'border': 'border 10s ease infinite', // new animation
+                'border': 'border 10s ease infinite',
+                'infinite-scroll': 'infinite-scroll 25s linear infinite',
             },
             'keyframes': {
                 'text': {
@@ -23,10 +24,14 @@ module.exports = {
                     }
                 },
                 'border': { // new keyframes
-                    '0%': { 'border-color': '#6366F1' },
-                    '50%': { 'border-color': '#8B5CF6' },
-                    '100%': { 'border-color': '#6366F1' },
+                    '0%': {'border-color': '#6366F1'},
+                    '50%': {'border-color': '#8B5CF6'},
+                    '100%': {'border-color': '#6366F1'},
                 },
+                'infinite-scroll': {
+                    from: {transform: 'translateX(0)'},
+                    to: {transform: 'translateX(-100%)'},
+                }
             },
             backgroundImage: {
                 'gradient-31': 'linear-gradient(31deg, var(--tw-gradient-stops))',
@@ -37,7 +42,7 @@ module.exports = {
                 'brand-green': '#53bb67',
             },
             margin: {
-                "4.5" : "1.125rem"
+                "4.5": "1.125rem"
             }
         },
     },
