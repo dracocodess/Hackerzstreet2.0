@@ -27,7 +27,7 @@ export default function NavLink({heading, href, _key}) {
             }}>
             <a
                 href={href}
-                className="relative z-10  lg:text-lg font-bold text-white hidden lg:block"
+                className="relative z-10  lg:text-lg font-bold text-white hidden lg:block uppercase"
             >
                 {heading.split('').map((l, i) => (
                     <motion.span

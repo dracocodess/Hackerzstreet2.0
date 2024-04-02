@@ -1,14 +1,14 @@
 import {motion} from 'framer-motion';
 import ANIM_STATES from '../../anim/header/register_button';
 import {useTranslation} from 'react-i18next';
-import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import {faArrowRight, faSheetPlastic} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-export default function RegisterButton() {
+export default function RegisterButton({ps_type = false, ps_link}) {
     const {t} = useTranslation();
     return (
         <motion.a
-            href="https://forms.gle/iEaNGxkNnmxGAzh78"
+            href={ps_type ? ps_link : "https://forms.gle/iEaNGxkNnmxGAzh78"}
             target="_blank"
             variants={{
                 whileHover: {
@@ -37,8 +37,8 @@ export default function RegisterButton() {
                     }}
                     className="flex z-10 items-center gap-2"
                 >
-                    <FontAwesomeIcon icon={faArrowRight}/>
-                    <span className="z-10">{t('Register')}</span>
+                    <FontAwesomeIcon icon={!ps_type ? faArrowRight : faSheetPlastic}/>
+                    <span className="z-10">{ps_type ? t("Problem Statements") : t('Register')}</span>
                 </motion.div>
                 <motion.div
                     variants={{
@@ -53,8 +53,8 @@ export default function RegisterButton() {
                     }}
                     className="flex z-10 items-center gap-2 text-white"
                 >
-                    <FontAwesomeIcon icon={faArrowRight}/>
-                    <span className="z-10">{t('Register')}</span>
+                    <FontAwesomeIcon icon={!ps_type ? faArrowRight : faSheetPlastic}/>
+                    <span className="z-10">{ps_type ? t("Problem Statements") : t('Register')}</span>
                 </motion.div>
             </div>
         </motion.a>

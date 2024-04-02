@@ -7,6 +7,7 @@ import About from "../components/About";
 import {useEffect} from "react";
 import {animate} from "framer-motion";
 import Sponsors from "../components/Sponsors";
+import Tracks from "../components/Track";
 
 export default function Home() {
     useEffect(() => {
@@ -37,6 +38,9 @@ export default function Home() {
             </section>
             <section id={"schedule"} className="w-full p-3">
                 <Schedule/>
+            </section>
+            <section id = {"tracks"} className="w-full p-3">
+                <Tracks/>
             </section>
             <section id={"about"} className="w-full p-3">
                 <About/>

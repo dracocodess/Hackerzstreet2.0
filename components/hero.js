@@ -2,18 +2,22 @@ import Image from 'next/image';
 import {useTranslation} from 'react-i18next';
 import Counter from './counter';
 import Typewriter from 'typewriter-effect/dist/core';
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import RegisterButton from "./anim/register_button";
 import {motion} from "framer-motion";
 
 export default function Hero() {
+    const [ps_link, setPsLink] = useState(null);
     useEffect(() => {
         new Typewriter('#typewriter', {
             strings: ['HACKERZSTREET 2.0', 'Debug.', "Code.", 'Innovate.', "Win."],
             autoStart: true,
             loop: true,
         });
-    });
+        fetch("/api/proxy").then(res => res.json()).then(data => {
+            setPsLink(data.__hcp_out);
+        })
+    })
     const {t} = useTranslation();
     return (
         <motion.div
@@ -32,8 +36,13 @@ export default function Hero() {
                        height={1080}/>
                 <span id="typewriter"
                       className="text-[#d6d5e3] lg:text-[4rem] md:text-3xl text-2xl font-bold poppins"></span>
-                <div className="h-5"/>
-                <RegisterButton/>
+                <div className="md:h-20 h-10"/>
+                <div className="flex lg:flex-row flex-col gap-5 min-w-fit">
+                    <RegisterButton/>
+                    <div className="relative">
+                        {ps_link && <RegisterButton ps_type={true} ps_link={ps_link}/>}
+                    </div>
+                </div>
                 <div className="h-20"></div>
                 <div className="flex gap-2 text-brand-green text-3xl font-bold poppins">
                     <span className="">{t('Rs.')}</span>

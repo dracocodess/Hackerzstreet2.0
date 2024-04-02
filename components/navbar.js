@@ -16,6 +16,13 @@ export default function Navbar() {
     const {t} = useTranslation();
     const [menuState, setMenuState] = useState('open');
     const [menuOpen, setMenuOpen] = useState('open');
+    const [ps_link, setPsLink] = useState(null);
+
+    useEffect(() => {
+        fetch("/api/proxy").then(res => res.json()).then(data => {
+            setPsLink(data.__hcp_out);
+        })
+    })
 
     const handleMenuState = () => {
         setMenuState('int');
@@ -68,8 +75,9 @@ export default function Navbar() {
                     })}
                 </div>
                 <div className="ml-auto flex">
-                    <div className="hidden md:block">
+                    <div className="hidden md:flex gap-2">
                         <RegisterButton/>
+                        {ps_link && <RegisterButton ps_type={true} ps_link={ps_link}/>}
                     </div>
                     <button className="py-1 px-2 rounded-full lg:hidden z-10" onClick={handleMenuState}>
                         {/*<FontAwesomeIcon icon={faBars}/>*/}
@@ -117,7 +125,7 @@ export default function Navbar() {
                             <div className="mb-10" key={index}>
                                 <motion.a
                                     variants={ANIM_STATES_MC}
-                                    className="block text-3xl font-bold text-white poppins w-fit"
+                                    className="block text-3xl font-bold text-white poppins w-fit uppercase"
                                     href={link.path}
                                 >
                                     {link.name}
