@@ -38,7 +38,7 @@ export default function Hero() {
                 <div className="flex gap-2 text-brand-green text-3xl font-bold poppins">
                     <span className="">{t('Rs.')}</span>
 
-                    <Counter value={40000}/>
+                    <Counter value={50000}/>
 
                     {t('/-')}
                 </div>
