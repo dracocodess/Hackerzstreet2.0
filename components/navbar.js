@@ -73,6 +73,7 @@ export default function Navbar() {
                     {links.map((link, index) => {
                         return <NavLink href={link.path} heading={t(link.name)} key={index} _key={index}/>;
                     })}
+
                 </div>
                 <div className="ml-auto flex">
                     <div className="hidden md:flex gap-2">
