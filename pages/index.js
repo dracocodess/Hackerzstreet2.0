@@ -32,9 +32,9 @@ export default function Home() {
             <section id={"home"} className="w-full p-3">
                 <Hero/>
             </section>
-            // <section id={"sponsors"} className="w-full p-3">
-            //     <Sponsors/>
-            // </section>
+              <section id={"sponsors"} className="w-full p-3">
+                 <Sponsors/>
+               </section>
             <section id={"schedule"} className="w-full p-3">
                 <Schedule/>
             </section>
