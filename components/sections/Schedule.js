@@ -1,7 +1,7 @@
-import ScheduleCard from "./ScheduleCard";
+import ScheduleCard from "../ScheduleCard";
 import {motion, useScroll} from "framer-motion"
 import {useTranslation} from "react-i18next";
-import ANIM_STATE_SECTION from "../anim/section";
+import ANIM_STATE_SECTION from "../../anim/section";
 
 export default function Schedule() {
     const {t} = useTranslation();

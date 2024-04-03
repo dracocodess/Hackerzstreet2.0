@@ -1,6 +1,9 @@
-import ANIM_STATE_SECTION from "../anim/section";
+import ANIM_STATE_SECTION from "../../anim/section";
 import {useTranslation} from "react-i18next";
 import {motion} from "framer-motion";
+import TrackCard from "../TrackCard";
+import {TRACK_META} from "../track_meta";
+
 
 export default function Tracks() {
     const {t} = useTranslation();
@@ -17,5 +20,11 @@ export default function Tracks() {
             from-green-400 to-green-300
             animate-text z-10">{t('Tracks')}</h1>
         </div>
+        <div className="h-5"/>
+        <h2 className="text-center mx-auto font-bold text-xl poppins text-lime-300">{t('Our tracks')}</h2>
+        <div className="h-10"/>
+        {TRACK_META.map(({name: track, description: desc}, index) => (
+            <TrackCard key={index} pi={++index} track={track} desc={desc}/>
+        ))}
     </motion.div>
 }

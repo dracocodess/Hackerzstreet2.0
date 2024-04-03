@@ -1,7 +1,7 @@
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {useTranslation} from "react-i18next";
-import ANIM_STATE_SECTION from "../anim/section";
+import ANIM_STATE_SECTION from "../../anim/section";
 
 export default function About() {
     const {t} = useTranslation()

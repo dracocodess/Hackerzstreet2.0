@@ -2,12 +2,12 @@ import {useTranslation} from 'react-i18next';
 import Navbar from '../components/navbar';
 import Hero from '../components/hero';
 import Head from 'next/head';
-import Schedule from "../components/Schedule";
-import About from "../components/About";
+import Schedule from "../components/sections/Schedule";
+import About from "../components/sections/About";
 import {useEffect} from "react";
 import {animate} from "framer-motion";
-import Sponsors from "../components/Sponsors";
-import Tracks from "../components/Track";
+import Sponsors from "../components/sections/Sponsors";
+import Tracks from "../components/sections/Track";
 
 export default function Home() {
     useEffect(() => {

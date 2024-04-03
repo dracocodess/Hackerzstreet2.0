@@ -1,5 +1,5 @@
 import {useTranslation} from "react-i18next";
-import ANIM_STATE_SECTION from "../anim/section";
+import ANIM_STATE_SECTION from "../../anim/section";
 import {motion, useAnimation, useInView} from "framer-motion";
 import Image from "next/image";
 import {useEffect, useRef, useState} from "react";
