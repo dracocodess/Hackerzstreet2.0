@@ -28,6 +28,11 @@ export default function Home() {
         <>
             <Head>
                 <title>{t('HACKERZSTREET_TITLE')}</title>
+                <meta name="description" content={t('HACKERZSTREET_DESCRIPTION')}/>
+                <meta name="keywords" content={t('HACKERZSTREET_KEYWORDS')}/>
+                <meta name="author" content={t('HACKERZSTREET_AUTHOR')}/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
             </Head>
             <Navbar/>
             <section id={"home"} className="w-full p-3">
