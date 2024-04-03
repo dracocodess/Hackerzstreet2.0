@@ -41,6 +41,9 @@ export default function Home() {
                 <meta property="og:thumbnail" content={banner}/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <meta name="robots" content="index, follow"/>
+                <meta name="keywords"
+                      content="ieeecsmuj, ieee cs muj , IEEE CS MUJ, IEEE, Genesis, IEEEMUJ, MUJ, CS Club, Manipal University Jaipur, Computer Society Club MUJ, Jaipur, Manipal's Biggest , Technical club, ieee student chapter, ieee hackathon, hackathon, hackerzstreet,coding, 24 hours,overnight, coding competition, programming,hackerzstreet 2.0"
+                />
                 <meta name="description"
                       content="Gear up for an adrenaline-fueled 24-hour coding marathon at Hackerzstreet 2.0, the ultimate tech showdown.🔥"/>
                 <meta name="theme-color" content="#b6b6fa"/>
