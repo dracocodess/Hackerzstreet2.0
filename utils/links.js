@@ -1,6 +1,6 @@
 const links = [
     {path: '/#home', name: 'Home'},
-    {path: '/#sponsors', name: 'Sponsors'},
+    // {path: '/#sponsors', name: 'Sponsors'},
     {path: '/#about', name: 'About'},
     { path: '/#tracks', name: 'Tracks' },
     {path: '/#schedule', name: 'Schedule'},

@@ -2,7 +2,7 @@ import ANIM_STATE_SECTION from "../../anim/section";
 import {useTranslation} from "react-i18next";
 import {motion} from "framer-motion";
 import TrackCard from "../TrackCard";
-import {TRACK_META} from "../track_meta";
+import {TRACK_META} from "../../utils/track_meta";
 
 
 export default function Tracks() {
