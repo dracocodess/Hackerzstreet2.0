@@ -23,28 +23,41 @@ export default function Home() {
             }
         })
     }, []);
+    const banner = "https://hackerzstreet2-0.vercel.app/assets/banner.jpeg"
     const {t} = useTranslation();
     return (
         <>
             <Head>
                 <title>{t('HACKERZSTREET_TITLE')}</title>
-                <meta name="description" content={t('HACKERZSTREET_DESCRIPTION')}/>
-                <meta name="keywords" content={t('HACKERZSTREET_KEYWORDS')}/>
-                <meta name="author" content={t('HACKERZSTREET_AUTHOR')}/>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+                <meta property="og:type" content="website"/>
+                <meta property="twitter:creator" content="@ieeemujcs"/>
+                <meta property="twitter:title" content={t('HACKERZSTREET_TITLE')}/>
+                <meta property="og:title" content={t('HACKERZSTREET_TITLE')}/>
+                <meta property="twitter:description"
+                      content="Gear up for an adrenaline-fueled 24-hour coding marathon at Hackerzstreet 2.0, the ultimate tech showdown.🔥"/>
+                <meta property="og:description"
+                      content="Gear up for an adrenaline-fueled 24-hour coding marathon at Hackerzstreet 2.0, the ultimate tech showdown.🔥"/>
+                <meta property="twitter:image" content={banner}/>
+                <meta property="og:thumbnail" content={banner}/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <meta name="robots" content="index, follow"/>
+                <meta name="description"
+                      content="Gear up for an adrenaline-fueled 24-hour coding marathon at Hackerzstreet 2.0, the ultimate tech showdown.🔥"/>
+                <meta name="theme-color" content="#b6b6fa"/>
+                <meta property="twitter:card" content="summary_large_image"/>
+                <meta property="og:color" content="#b6b6fa"/>
             </Head>
             <Navbar/>
             <section id={"home"} className="w-full p-3">
                 <Hero/>
             </section>
-              <section id={"sponsors"} className="w-full p-3">
-                 <Sponsors/>
-               </section>
+            <section id={"sponsors"} className="w-full p-3">
+                <Sponsors/>
+            </section>
             <section id={"schedule"} className="w-full p-3">
                 <Schedule/>
             </section>
-            <section id = {"tracks"} className="w-full p-3">
+            <section id={"tracks"} className="w-full p-3">
                 <Tracks/>
             </section>
             <section id={"about"} className="w-full p-3">
