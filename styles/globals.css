@@ -8,7 +8,9 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   scroll-behavior: smooth;
-  scroll-padding-top: 4rem
+  scroll-padding-top: 4rem;
+  color-scheme: dark;
+  color: white;
 }
 
 a {
