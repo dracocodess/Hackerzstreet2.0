@@ -11,7 +11,7 @@ export default function TrackCard({pi, track, desc}) {
 
         <Image src={`/assets/track${pi}.svg`} alt={`track${pi}`} width={200} height={200} className="h-48 w-48 mx-auto md:m-0"/>
         <div>
-            <div className="font-bold text-red-400 text-center md:text-left">{track}</div>
+            <div className="font-bold text-white-400 text-center md:text-left">{track}</div>
             <div className="h-5"></div>
             <div className="font-medium text-slate-100 text-lg text-center md:text-left">{desc}</div>
         </div>
