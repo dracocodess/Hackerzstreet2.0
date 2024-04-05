@@ -82,7 +82,7 @@ export default function Schedule() {
                             y: ["0%", "100%"]
                         }}/>
                     </div>
-                    <ScheduleCard day={"Day 2"} time={"10:00 AM"} event={"Reporting and final mentoring session"}/>
+                    <ScheduleCard day={"Day 2"} time={"01:30 PM"} event={"Reporting of teams who qualified Round 1 at Smt. Sharada Pai Auditorium"}/>
                     <div className="border-dashed border-l-2 border-purple-400 w-1 h-16 absolute left-1/2"></div>
                     <div
                         className="w-2 h-16 bg-transparent relative rounded-full overflow-hidden mx-auto left-[0.1rem]">
@@ -100,7 +100,7 @@ export default function Schedule() {
                             y: ["0%", "100%"]
                         }}/>
                     </div>
-                    <ScheduleCard day={"Day 2"} time={"02:00 PM"} event={"Round 2 Presentation starts"}/>
+                    <ScheduleCard day={"Day 2"} time={"02:00 PM"} event={"Round 2 Presentation & Judging starts"}/>
                     <div className="border-dashed border-l-2 border-purple-400 w-1 h-16 absolute left-1/2"></div>
                     <div
                         className="w-2 h-16 bg-transparent relative rounded-full overflow-hidden mx-auto left-[0.1rem]">
